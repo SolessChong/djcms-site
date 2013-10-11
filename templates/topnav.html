@@ -1,0 +1,30 @@
+<div class="container_12">
+    <div id="header" class="grid_12">
+        <div id="logo" class="grid_4 alpha"><a href="index.htm"><img src="/static/images/logo.png" alt="" /></a></div>
+        <div id="menu" class="grid_8 omega">
+            <ul id="nav">
+                <li>
+                    <a href="/"  
+                        {% if page_type == 'home' %} class="active"{% endif %}>Home
+                    </a>
+                </li>
+                <li>
+                    <a href="/projects-home" 
+                        {% if page_type == 'projects' %} class="active"{% endif %}>Projects
+                    </a>
+                </li>
+                <!--
+                <li>
+                    <a href="contact.htm" {% if page_type == 'gallery' %} class="active"{% endif %}>Gallery
+                    </a>
+                </li>
+                -->
+                <li class="last">
+                    <a href="/contact-us" {% if page_type == 'contact' %} class="active"{% endif %}>Contact
+                    </a>
+                </li>
+            </ul>
+        </div>                
+    </div>
+    <div class="clear"></div>
+</div>

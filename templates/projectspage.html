@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load cms_tags %}
+{% load menu_tags %}
+
+{% block header_content %}
+    {% with page_type='projects' %}
+        {% include "topnav.html" %}
+    {% endwith %}
+{% endblock %}
+
+{% block base_content %}
+     <!-- Main Section -->
+    <div class="main-section">
+        <div class="container_12 ">
+            <div class="grid_9">
+                {% placeholder "main_content" or %}
+                    <div>
+                        <br/>
+                    </div>
+                {% endplaceholder %}
+            </div>
+            <div class="grid_3">
+                <h1>Menu</h1>
+                <ul>
+                    {% show_menu 2 100 2 100 "menu/cust_menu.html" %}
+                </ul>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+     <!-- End of Main Section -->
+
+{% endblock %}

@@ -1,0 +1,102 @@
+{% load cms_tags sekizai_tags %}
+{% with page_type='home' %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+    <head>
+        {% include "defaultheader.html" %}
+        <script type="text/javascript" src="/static/slides.min.jquery.js"></script>
+        <script type="text/javascript">
+            $(function(){
+                $('#slider').slides({
+                    preload: true,
+                    preloadImage: '/static/img/loading.gif',
+                    play: 5000,
+                    pause: 2500,
+                    auto: 2000,
+                    hoverPause: true,
+                    animationComplete: function(current){
+                        $('.caption').animate({
+                            bottom:0
+                        },200);
+                    },
+                    slidesLoaded: function() {
+                        $('.caption').animate({
+                            bottom:0
+                        },200);
+                    }
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <!-- Header -->
+        {% include "topnav.html" %}
+        <!-- End of Header -->
+        <div class="clear"></div>        
+         <!-- Main Section -->
+        <div class="container_12">
+            <div id="slider" class="grid_12">
+                <div class="slides_container">
+                    <div class="slide">
+                        <a href="projectseed.htm" title="Project Seed"><img src="/static/images/seedprojectposter-hor.png" alt="" /><div class="caption">Project Seed</div></a>
+                    </div>
+                    <div class="slide">
+                        <a href="#"><img src="/static/images/avisummit.png" alt="" /></a><div class="caption">第一届航空航天高峰论坛</div>
+                    </div>
+                </div>
+                <a href="#" class="prev"><img src="/static/images/arrow-prev.png" width="24" height="43" alt="Arrow Prev" /></a>
+                <a href="#" class="next"><img src="/static/images/arrow-next.png" width="24" height="43" alt="Arrow Next" /></a>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div id="content" class="shadow">
+            <div class="container_12 testimonials">
+                <span class="testimonial-message">欢迎来到北京大学航空俱乐部,与我们一起享受创造的乐趣</span>
+            </div>
+            <div class="clear"></div>        
+			<br><br>
+			<div class="container_12"><div class="grid_3 new-bullets">
+                    <h1>Free & Open</h1>
+					<p>自由，开放</p>
+                    <ul>
+                        <li>任何背景的人都可以加入，可以自由的使用资源</li>
+						<li>公开，开源</li>
+                    </ul>
+                </div>
+                <div class="grid_3 new-bullets">
+                    <h1>Platform & Resource</h1>
+					<p>平台，资源</p>
+                    <ul>
+                        <li>为会员提供交流、学习平台</li>
+                        <li>为会员提供学习、创造的原料以及知识支持</li>
+                    </ul>
+                </div>
+                <div class="grid_3 new-bullets">
+                    <h1>Initiatives & Doer</h1>
+					<p>创意，实现</p>
+					<ul>
+						<li>倾向于具有创新精神的项目</li>
+						<li>倾向于具有实现精神的计划</li>
+					</ul>
+                    
+                </div>
+                <div class="grid_3 new-bullets">
+                    <h1>Easy & Profound</h1>
+					<p>易入门，有深度</p>
+                    <ul>
+						<li>项目要求容易上手，技术门槛低，不要让技术限制受众</li>
+                        <li>项目要求留有扩展余地，有进一步做深度研究的可能</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+         <!-- End of Main Section -->
+         <!-- Footer -->
+        {% include "defaultfooter.html" %}
+         <!-- End of Footer -->
+        <div class="clear"></div>
+        <script type="text/javascript"> Cufon.now(); </script>
+    </body>
+</html>
+{% endwith %}

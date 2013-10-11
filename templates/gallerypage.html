@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load cms_tags %}
+
+{% block header_content %}
+    {% with page_type='projects' %}
+        {% include "topnav.html" %}
+    {% endwith %}
+{% endblock %}
+
+{% block base_content %}
+     <!-- Main Section -->
+    <div class="main-section">
+        <div class="container_12 ">
+            <div class="grid_9">
+                {% placeholder "main_content" or %}
+                    <div>
+                        <br/>
+                    </div>
+                {% endplaceholder %}
+            </div>
+            <div class="grid_3">
+                <ul>
+                    {% include "sidebar.html" %}
+                </ul>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+     <!-- End of Main Section -->
+
+{% endblock %}

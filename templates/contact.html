@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load cms_tags %}
+
+{% block header_content %}
+    {% with page_type='contact' %}
+        {% include "topnav.html" %}
+    {% endwith %}
+{% endblock %}
+
+{% block base_content %}
+        <!-- Main Section -->
+        <div class="main-section">
+            <div class="container_12 ">
+                <div class="grid_6">
+                    <h1>Contact us</h1>
+                    <p>
+						咨询详细信息，或有建议，意见以及合作意向，敬请联系我们
+                    </p>
+					<p><img src="/static/images/phone.png" alt="Office Number" /> Office Tel: 15801274231</p>
+                    <p><img src="/static/images/email.png" alt="" /> Email: skymakerpku[at]gmail.com</p>
+                </div>
+                <div class="grid_6">
+                    <h1>Our Offices</h1>
+                    <img src="http://maps.google.com/maps/api/staticmap?center=39.994068,116.318074&zoom=13&markers=39.994068,116.318074&size=500x300&sensor=false" alt="map to offices" class="map frame" />
+
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <!-- End of Main Section -->
+{% endblock %}
